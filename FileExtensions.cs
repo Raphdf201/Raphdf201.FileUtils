@@ -1,0 +1,11 @@
+﻿using System.IO;
+
+namespace Raphdf201.FileUtils;
+
+public static class FileExtensions
+{
+    extension(File)
+    {
+        public static string GetName(string path) => Path.GetFileName(path);
+    }
+}
