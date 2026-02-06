@@ -16,16 +16,34 @@ public class File
     {
         _path = path;
     }
-    
-    public string GetName() => Std.Path.GetFileName(_path.ToString());
 
-    public Path GetPath() => _path;
+    public string GetName()
+    {
+        return Std.Path.GetFileName(_path.ToString());
+    }
 
-    public void Copy(File dest) => Std.File.Copy(_path.ToString(), dest.GetPath().ToString());
+    public Path GetPath()
+    {
+        return _path;
+    }
 
-    public void Create() => Std.File.WriteAllText(_path.ToString(), "");
+    public void Copy(File dest)
+    {
+        Std.File.Copy(_path.ToString(), dest.GetPath().ToString());
+    }
 
-    public void Delete() => Std.File.Delete(_path.ToString());
+    public void Create()
+    {
+        Std.File.WriteAllText(_path.ToString(), "");
+    }
 
-    public DateTime GetLastWriteTime() => Std.File.GetLastWriteTime(_path.ToString());
+    public void Delete()
+    {
+        Std.File.Delete(_path.ToString());
+    }
+
+    public DateTime GetLastWriteTime()
+    {
+        return Std.File.GetLastWriteTime(_path.ToString());
+    }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Std = System.IO;
 
 namespace Raphdf201.FileUtils;
@@ -17,12 +18,25 @@ public class Directory
         _path = path;
     }
 
-    public void Create() => Std.Directory.CreateDirectory(_path.ToString());
+    public void Create()
+    {
+        Std.Directory.CreateDirectory(_path.ToString());
+    }
 
-    public bool Exists() => Std.Directory.Exists(_path.ToString());
+    public bool Exists()
+    {
+        return Std.Directory.Exists(_path.ToString());
+    }
 
-    public IEnumerable<string> EnumerateFiles() => Std.Directory.EnumerateFiles(_path.ToString());
-    public IEnumerable<string> EnumerateDirectories() => Std.Directory.EnumerateDirectories(_path.ToString());
+    public IEnumerable<File> EnumerateFiles()
+    {
+        return Std.Directory.EnumerateFiles(_path.ToString()).Select(f => new File(f));
+    }
+
+    public IEnumerable<Directory> EnumerateDirectories()
+    {
+        return Std.Directory.EnumerateDirectories(_path.ToString()).Select(d => new Directory(d));
+    }
 
     public void CreateIfNoExists()
     {
