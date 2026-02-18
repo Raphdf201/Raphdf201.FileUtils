@@ -7,8 +7,11 @@ public static class FileExtensions
 {
     extension(File)
     {
-        [Obsolete]
         public static string GetName(string path) => Path.GetFileName(path);
-        public static string? GetFileName(string path) => Path.GetFileName(path);
+    }
+
+    extension(string)
+    {
+        public static string? GetFileName(string path) => Path.GetDirectoryName(path);
     }
 }

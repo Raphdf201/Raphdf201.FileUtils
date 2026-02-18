@@ -7,8 +7,11 @@ public static class DirectoryExtensions
 {
     extension(Directory)
     {
-        [Obsolete]
         public static string? GetName(string path) => Path.GetDirectoryName(path);
+    }
+
+    extension(string)
+    {
         public static string? GetDirectoryName(string path) => Path.GetDirectoryName(path);
     }
 }
