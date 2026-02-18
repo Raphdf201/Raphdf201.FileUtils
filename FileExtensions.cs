@@ -10,8 +10,8 @@ public static class FileExtensions
         public static string GetName(string path) => Path.GetFileName(path);
     }
 
-    extension(string)
+    extension(string path)
     {
-        public static string? GetFileName(string path) => Path.GetDirectoryName(path);
+        public string? GetFileName() => Path.GetDirectoryName(path);
     }
 }

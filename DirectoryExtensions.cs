@@ -10,8 +10,8 @@ public static class DirectoryExtensions
         public static string? GetName(string path) => Path.GetDirectoryName(path);
     }
 
-    extension(string)
+    extension(string path)
     {
-        public static string? GetDirectoryName(string path) => Path.GetDirectoryName(path);
+        public string? GetDirectoryName() => Path.GetDirectoryName(path);
     }
 }
