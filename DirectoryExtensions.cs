@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 namespace Raphdf201.FileUtils;
 
@@ -13,5 +12,6 @@ public static class DirectoryExtensions
     extension(string path)
     {
         public string? GetDirectoryName() => Path.GetDirectoryName(path);
+        public void CreateDirectory() => Directory.CreateDirectory(path);
     }
 }
