@@ -12,6 +12,6 @@ public static class FileExtensions
 
     extension(string path)
     {
-        public string? GetFileName() => Path.GetDirectoryName(path);
+        public string? GetFileName() => Path.GetFileName(path);
     }
 }
