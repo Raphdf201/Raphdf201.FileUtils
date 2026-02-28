@@ -12,6 +12,11 @@ public static class DirectoryExtensions
     extension(string path)
     {
         public string? GetDirectoryName() => Path.GetDirectoryName(path);
-        public void CreateDirectory() => Directory.CreateDirectory(path);
+
+        public string CreateDirectory()
+        {
+            Directory.CreateDirectory(path);
+            return path;
+        }
     }
 }
